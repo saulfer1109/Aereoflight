@@ -13,9 +13,7 @@ func shoot():
 	bullet.dir=$Front.rotation
 	bullet.pos = $Front.global_position
 	bullet.rota = global_rotation
-	$AnimatedSprite2D.play("shooting")
 	get_parent().add_child(bullet)
-	$AnimatedSprite2D.play("default")
 	
 
 func _physics_process(delta: float) -> void:

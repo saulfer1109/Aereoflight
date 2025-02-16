@@ -1,15 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyxfoiophvq65"]
-
-[ext_resource type="Script" path="res://scripts/menu.gd" id="1_6dd20"]
-[ext_resource type="Texture2D" uid="uid://6j5uca21140o" path="res://assets/background_1.png" id="1_dah7k"]
-
-[sub_resource type="SystemFont" id="SystemFont_0a2cp"]
-
-[sub_resource type="SystemFont" id="SystemFont_acmuo"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_48ga0"]
-font = SubResource("SystemFont_acmuo")
-font_size = 70
+[gd_scene format=3 uid="uid://cyxfoiophvq65"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -18,57 +7,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6dd20")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_dah7k")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Main" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 489.0
 alignment = 1
 
-[node name="Buttons" type="HBoxContainer" parent="MarginContainer/Main"]
+[node name="LabelPuntos" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-alignment = 1
-
-[node name="Start" type="Button" parent="MarginContainer/Main/Buttons"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_0a2cp")
-theme_override_font_sizes/font_size = 50
-text = "Iniciar"
-
-[node name="Exit" type="Button" parent="MarginContainer/Main/Buttons"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Salir"
-
-[node name="Title" type="VBoxContainer" parent="MarginContainer"]
-custom_minimum_size = Vector2(0, 400)
-layout_mode = 2
-size_flags_vertical = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="MarginContainer/Title"]
-layout_mode = 2
-text = "AeroFlight"
-label_settings = SubResource("LabelSettings_48ga0")
+text = "{}"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="MarginContainer/Main/Buttons/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/Main/Buttons/Exit" to="." method="_on_exit_pressed"]
+[node name="LabelVidas" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
