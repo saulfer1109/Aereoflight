@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://6k1o753op16y"]
+
+[ext_resource type="PackedScene" uid="uid://d7ahefahkyak" path="res://scenes/player.tscn" id="1_r7335"]
+[ext_resource type="Texture2D" uid="uid://3v7y563ysypa" path="res://assets/cloud_1.png" id="2_p7y23"]
+[ext_resource type="AudioStream" uid="uid://bsfcg46hjabfl" path="res://assets/Retro_Platforming_David_Fesliyan.mp3" id="4_dluqe"]
+[ext_resource type="Texture2D" uid="uid://6j5uca21140o" path="res://assets/background_1.png" id="5_a812y"]
+[ext_resource type="Texture2D" uid="uid://clmv2c7p48jey" path="res://assets/enemy_spritesheet.png" id="5_c24dt"]
+[ext_resource type="Script" path="res://scenes/hit.gd" id="5_e6hur"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ninn4"]
+distance = 48.9997
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5qi2"]
+size = Vector2(95, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vwng"]
+size = Vector2(95, 27)
+
+[node name="Main" type="Node2D"]
+texture_filter = 1
+
+[node name="GroundParallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(0, 300)
+autoscroll = Vector2(0, 100)
+repeat_times = 3
+ignore_camera_scroll = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="GroundParallax2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_a812y")
+
+[node name="CloudParallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(400, 300)
+autoscroll = Vector2(0, 200)
+repeat_times = 3
+ignore_camera_scroll = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudParallax2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_p7y23")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("1_r7335")]
+position = Vector2(0, 100)
+
+[node name="WorldLimit" type="StaticBody2D" parent="."]
+
+[node name="BottomBorder" type="CollisionShape2D" parent="WorldLimit"]
+position = Vector2(0, 273)
+shape = SubResource("WorldBoundaryShape2D_ninn4")
+
+[node name="LeftBorder" type="CollisionShape2D" parent="WorldLimit"]
+position = Vector2(-200, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_ninn4")
+
+[node name="RightBorder" type="CollisionShape2D" parent="WorldLimit"]
+position = Vector2(200, 0)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_ninn4")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dluqe")
+autoplay = true
+
+[node name="enemigo" type="CharacterBody2D" parent="."]
+disable_mode = 2
+collision_layer = 2
+collision_mask = 2
+
+[node name="Area2D" type="Area2D" parent="enemigo"]
+position = Vector2(0, -1)
+disable_mode = 2
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("5_e6hur")
+
+[node name="Sprite2D" type="Sprite2D" parent="enemigo/Area2D"]
+position = Vector2(-1, -171)
+texture = ExtResource("5_c24dt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo/Area2D"]
+position = Vector2(-2.5, -167.5)
+shape = SubResource("RectangleShape2D_l5qi2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo"]
+position = Vector2(-1.5, -170.5)
+shape = SubResource("RectangleShape2D_5vwng")
