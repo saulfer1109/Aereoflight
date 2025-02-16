@@ -1,25 +1,25 @@
 [gd_scene load_steps=9 format=3 uid="uid://dsd7fpsusnqhn"]
 
-[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_bpv7u"]
-[ext_resource type="Texture2D" uid="uid://cy5fnp8xv7xk7" path="res://assets/bullet_spritesheet.png" id="2_5rych"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_67h3b"]
+[ext_resource type="Texture2D" uid="uid://cy5fnp8xv7xk7" path="res://assets/bullet_spritesheet.png" id="2_mhr1d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikx7r"]
 size = Vector2(26, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_86ohq"]
-atlas = ExtResource("2_5rych")
+atlas = ExtResource("2_mhr1d")
 region = Rect2(0, 8, 32, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0pcq0"]
-atlas = ExtResource("2_5rych")
+atlas = ExtResource("2_mhr1d")
 region = Rect2(32, 8, 32, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ed10u"]
-atlas = ExtResource("2_5rych")
+atlas = ExtResource("2_mhr1d")
 region = Rect2(64, 8, 32, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7i00"]
-atlas = ExtResource("2_5rych")
+atlas = ExtResource("2_mhr1d")
 region = Rect2(96, 8, 32, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mx0kj"]
@@ -43,8 +43,10 @@ animations = [{
 }]
 
 [node name="Weapon" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
 motion_mode = 1
-script = ExtResource("1_bpv7u")
+script = ExtResource("1_67h3b")
 
 [node name="hitbox" type="Area2D" parent="."]
 

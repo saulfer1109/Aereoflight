@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://6k1o753op16y"]
+[gd_scene load_steps=14 format=3 uid="uid://6k1o753op16y"]
 
 [ext_resource type="PackedScene" uid="uid://d7ahefahkyak" path="res://scenes/player.tscn" id="1_r7335"]
 [ext_resource type="Texture2D" uid="uid://3v7y563ysypa" path="res://assets/cloud_1.png" id="2_p7y23"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://6j5uca21140o" path="res://assets/background_1.png" id="5_a812y"]
 [ext_resource type="Texture2D" uid="uid://clmv2c7p48jey" path="res://assets/enemy_spritesheet.png" id="5_c24dt"]
 [ext_resource type="Script" path="res://scripts/hit.gd" id="5_e6hur"]
+[ext_resource type="PackedScene" uid="uid://corrolcvypoyk" path="res://scenes/ui.tscn" id="7_l1leq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ninn4"]
 distance = 48.9997
@@ -117,3 +118,9 @@ frame_progress = 0.815083
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo/Area2D"]
 shape = SubResource("RectangleShape2D_l5qi2")
+
+[node name="ui" parent="." instance=ExtResource("7_l1leq")]
+offset_left = -150.0
+offset_top = -225.0
+offset_right = -150.0
+offset_bottom = -225.0

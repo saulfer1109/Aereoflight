@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var SPEED: float = 300.0
 const JUMP_VELOCITY = -400.0
 
-var bullet_path = preload("res://scenes/weapon.tscn")
+var bullet_path = preload("res://scenes/bullet.tscn")
 func _process(delta):
 	if Input.is_action_just_pressed("shoot"):  # Tecla configurada en InputMap
 		shoot()
