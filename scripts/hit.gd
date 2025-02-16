@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 var speed: float=100.0
 var direction: Vector2=Vector2.ZERO
@@ -15,10 +15,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Mueve al enemigo en la dirección actual
 	position += direction * speed * delta
-
 	# Limita la posición del enemigo a los bordes de la pantalla
-	position.x = clamp(position.x, 0, get_viewport_rect().size.x)
-	position.y = clamp(position.y, 0, get_viewport_rect().size.y)
+	position.x = clamp(position.x, -150, 150)
+	position.y = clamp(position.y, -225, 225)
 
 	# Actualiza el temporizador
 	current_timer += delta
