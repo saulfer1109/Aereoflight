@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://3v7y563ysypa" path="res://assets/cloud_1.png" id="2_p7y23"]
 [ext_resource type="AudioStream" uid="uid://bsfcg46hjabfl" path="res://assets/Retro_Platforming_David_Fesliyan.mp3" id="4_dluqe"]
 [ext_resource type="Texture2D" uid="uid://6j5uca21140o" path="res://assets/background_1.png" id="5_a812y"]
-[ext_resource type="Script" path="res://scripts/hit.gd" id="5_e6hur"]
-[ext_resource type="PackedScene" uid="uid://dcnngb2mjqtxi" path="res://scenes/enemy.tscn" id="7_dy1ya"]
+[ext_resource type="PackedScene" uid="uid://dcnngb2mjqtxi" path="res://scenes/enemy.tscn" id="6_7eha5"]
+[ext_resource type="PackedScene" uid="uid://corrolcvypoyk" path="res://scenes/ui.tscn" id="7_l1leq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ninn4"]
 distance = 48.9997
@@ -40,7 +40,7 @@ zoom = Vector2(2, 2)
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_r7335")]
-position = Vector2(0, 100)
+position = Vector2(-1, 175)
 
 [node name="WorldLimit" type="StaticBody2D" parent="."]
 
@@ -67,6 +67,71 @@ shape = SubResource("WorldBoundaryShape2D_ninn4")
 stream = ExtResource("4_dluqe")
 autoplay = true
 
-[node name="Enemy" parent="." instance=ExtResource("7_dy1ya")]
-position = Vector2(-75, -189)
-script = ExtResource("5_e6hur")
+[node name="ui" parent="." instance=ExtResource("7_l1leq")]
+offset_left = -150.0
+offset_top = -225.0
+offset_right = -150.0
+offset_bottom = -225.0
+
+[node name="Enemy1" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-85, 38)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(80, 59)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(33, 63)
+
+[node name="Enemy4" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-53, 65)
+
+[node name="Enemy5" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-53, 18)
+
+[node name="Enemy6" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-15, 65)
+
+[node name="Enemy7" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-12, 19)
+
+[node name="Enemy8" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-8, -61)
+
+[node name="Enemy9" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-8, -95)
+
+[node name="Enemy10" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-9, -130)
+
+[node name="Enemy11" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-9, -163)
+
+[node name="Enemy12" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(29, -22)
+
+[node name="Enemy13" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(29, 19)
+
+[node name="Enemy14" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(27, -59)
+
+[node name="Enemy15" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(29, -93)
+
+[node name="Enemy16" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(28, -133)
+
+[node name="Enemy17" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(29, -169)
+
+[node name="Enemy18" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-1, -204)
+
+[node name="Enemy19" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-15, -19)
+
+[node name="Enemy20" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(69, 20)
+
+[node name="Enemy21" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(138, 40)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://d7ahefahkyak"]
+[gd_scene load_steps=6 format=3 uid="uid://d7ahefahkyak"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_01com"]
-[ext_resource type="PackedScene" uid="uid://dsd7fpsusnqhn" path="res://scenes/weapon.tscn" id="2_dpfn8"]
+[ext_resource type="PackedScene" uid="uid://dsd7fpsusnqhn" path="res://scenes/bullet.tscn" id="2_dpfn8"]
 [ext_resource type="Texture2D" uid="uid://5stk4n141mm8" path="res://assets/plane_spritesheet.png" id="2_maoo0"]
+[ext_resource type="AudioStream" uid="uid://c2so733pj0pxi" path="res://assets/laser-shot.mp3" id="4_h5rqs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r6bp4"]
 atlas = ExtResource("2_maoo0")
@@ -42,7 +43,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, 2)
-collision_mask = 2
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_01com")
 bullet_scene = ExtResource("2_dpfn8")
@@ -56,3 +57,7 @@ shape = SubResource("CapsuleShape2D_dwsnf")
 
 [node name="Front" type="Node2D" parent="."]
 rotation = -1.5708
+
+[node name="Laser-shot" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -2)
+stream = ExtResource("4_h5rqs")
