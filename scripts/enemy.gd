@@ -28,8 +28,10 @@ func _process(delta: float) -> void:
 	if current_timer >= change_direction_timer:
 		direction = get_random_direction()  # Nueva dirección aleatoria
 		current_timer = 0.0  # Reinicia el temporizador
+	
 	if Global.score >= 20:
 		get_tree().change_scene_to_file("res://scenes/win.tscn")
+		Global.score = 0
 	
 func get_random_direction() -> Vector2:
 	# Genera un ángulo aleatorio en radianes

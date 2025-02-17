@@ -9,5 +9,3 @@ func addPoints():
 	points += 1
 	print(points)
 	Score.text = "Score: " + str(points)
-	
-	

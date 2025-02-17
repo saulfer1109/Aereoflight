@@ -40,7 +40,7 @@ zoom = Vector2(2, 2)
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_r7335")]
-position = Vector2(0, 100)
+position = Vector2(-1, 175)
 
 [node name="WorldLimit" type="StaticBody2D" parent="."]
 
@@ -58,6 +58,11 @@ position = Vector2(200, 0)
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_ninn4")
 
+[node name="TopBorder" type="CollisionShape2D" parent="WorldLimit"]
+position = Vector2(0, -275)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_ninn4")
+
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dluqe")
 autoplay = true
@@ -68,62 +73,65 @@ offset_top = -225.0
 offset_right = -150.0
 offset_bottom = -225.0
 
-[node name="Enemy7" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(-19, -150)
-
-[node name="Enemy8" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(-15, -230)
-
-[node name="Enemy9" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(-15, -264)
-
-[node name="Enemy10" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(-16, -299)
-
-[node name="Enemy11" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(-16, -332)
-
-[node name="Enemy12" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(22, -191)
-
-[node name="Enemy13" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(22, -150)
-
-[node name="Enemy14" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(20, -228)
-
-[node name="Enemy15" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(22, -262)
-
-[node name="Enemy16" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(21, -302)
-
-[node name="Enemy17" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(22, -338)
-
-[node name="Enemy18" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(-8, -373)
-
-[node name="Enemy19" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(-22, -188)
-
-[node name="Enemy20" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(62, -149)
-
-[node name="Enemy3" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(26, -106)
-
-[node name="Enemy4" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(-60, -104)
-
-[node name="Enemy5" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(-60, -151)
-
-[node name="Enemy6" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(-22, -104)
-
 [node name="Enemy1" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(-92, -131)
+position = Vector2(-85, 38)
 
 [node name="Enemy2" parent="." instance=ExtResource("6_7eha5")]
-position = Vector2(73, -110)
+position = Vector2(80, 59)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(33, 63)
+
+[node name="Enemy4" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-53, 65)
+
+[node name="Enemy5" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-53, 18)
+
+[node name="Enemy6" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-15, 65)
+
+[node name="Enemy7" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-12, 19)
+
+[node name="Enemy8" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-8, -61)
+
+[node name="Enemy9" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-8, -95)
+
+[node name="Enemy10" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-9, -130)
+
+[node name="Enemy11" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-9, -163)
+
+[node name="Enemy12" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(29, -22)
+
+[node name="Enemy13" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(29, 19)
+
+[node name="Enemy14" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(27, -59)
+
+[node name="Enemy15" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(29, -93)
+
+[node name="Enemy16" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(28, -133)
+
+[node name="Enemy17" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(29, -169)
+
+[node name="Enemy18" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-1, -204)
+
+[node name="Enemy19" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-15, -19)
+
+[node name="Enemy20" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(69, 20)
+
+[node name="Enemy21" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(138, 40)

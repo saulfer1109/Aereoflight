@@ -6,7 +6,6 @@ var dir: float
 var speed: float = 200
 var attack_damage := 4.0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	global_position = pos
 	global_rotation = rota
