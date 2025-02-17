@@ -57,16 +57,16 @@ collision_mask = 5
 sprite_frames = SubResource("SpriteFrames_xakpw")
 frame_progress = 0.398374
 
-[node name="hitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("3_0eb8n")
 health_component = NodePath("HealthComponent")
 
-[node name="HealthComponent" type="Node2D" parent="hitboxComponent"]
+[node name="HealthComponent" type="Node2D" parent="HitboxComponent"]
 script = ExtResource("2_rh47x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitboxComponent"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CapsuleShape2D_r3qsa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
