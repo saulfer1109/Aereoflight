@@ -1,47 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://6k1o753op16y"]
+[gd_scene load_steps=8 format=3 uid="uid://6k1o753op16y"]
 
 [ext_resource type="PackedScene" uid="uid://d7ahefahkyak" path="res://scenes/player.tscn" id="1_r7335"]
 [ext_resource type="Texture2D" uid="uid://3v7y563ysypa" path="res://assets/cloud_1.png" id="2_p7y23"]
 [ext_resource type="AudioStream" uid="uid://bsfcg46hjabfl" path="res://assets/Retro_Platforming_David_Fesliyan.mp3" id="4_dluqe"]
 [ext_resource type="Texture2D" uid="uid://6j5uca21140o" path="res://assets/background_1.png" id="5_a812y"]
-[ext_resource type="Texture2D" uid="uid://clmv2c7p48jey" path="res://assets/enemy_spritesheet.png" id="5_c24dt"]
-[ext_resource type="Script" path="res://scripts/hit.gd" id="5_e6hur"]
+[ext_resource type="PackedScene" uid="uid://dcnngb2mjqtxi" path="res://scenes/enemy.tscn" id="6_7eha5"]
 [ext_resource type="PackedScene" uid="uid://corrolcvypoyk" path="res://scenes/ui.tscn" id="7_l1leq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ninn4"]
 distance = 48.9997
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v16s6"]
-atlas = ExtResource("5_c24dt")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ppgl0"]
-atlas = ExtResource("5_c24dt")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nmaux"]
-atlas = ExtResource("5_c24dt")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pgwhm"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v16s6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ppgl0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nmaux")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5qi2"]
-size = Vector2(32, 32.5)
 
 [node name="Main" type="Node2D"]
 texture_filter = 1
@@ -91,36 +58,72 @@ position = Vector2(200, 0)
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_ninn4")
 
-[node name="TopBorder" type="CollisionShape2D" parent="WorldLimit"]
-position = Vector2(0, -275)
-rotation = 3.14159
-shape = SubResource("WorldBoundaryShape2D_ninn4")
-
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dluqe")
 autoplay = true
-
-[node name="enemigo" type="CharacterBody2D" parent="."]
-position = Vector2(1, -187)
-disable_mode = 2
-collision_layer = 3
-collision_mask = 2
-script = ExtResource("5_e6hur")
-
-[node name="Area2D" type="Area2D" parent="enemigo"]
-disable_mode = 2
-collision_layer = 3
-collision_mask = 3
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="enemigo/Area2D"]
-sprite_frames = SubResource("SpriteFrames_pgwhm")
-frame_progress = 0.815083
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo/Area2D"]
-shape = SubResource("RectangleShape2D_l5qi2")
 
 [node name="ui" parent="." instance=ExtResource("7_l1leq")]
 offset_left = -150.0
 offset_top = -225.0
 offset_right = -150.0
 offset_bottom = -225.0
+
+[node name="Enemy7" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-19, -150)
+
+[node name="Enemy8" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-15, -230)
+
+[node name="Enemy9" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-15, -264)
+
+[node name="Enemy10" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-16, -299)
+
+[node name="Enemy11" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-16, -332)
+
+[node name="Enemy12" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(22, -191)
+
+[node name="Enemy13" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(22, -150)
+
+[node name="Enemy14" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(20, -228)
+
+[node name="Enemy15" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(22, -262)
+
+[node name="Enemy16" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(21, -302)
+
+[node name="Enemy17" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(22, -338)
+
+[node name="Enemy18" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-8, -373)
+
+[node name="Enemy19" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-22, -188)
+
+[node name="Enemy20" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(62, -149)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(26, -106)
+
+[node name="Enemy4" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-60, -104)
+
+[node name="Enemy5" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-60, -151)
+
+[node name="Enemy6" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-22, -104)
+
+[node name="Enemy1" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(-92, -131)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_7eha5")]
+position = Vector2(73, -110)

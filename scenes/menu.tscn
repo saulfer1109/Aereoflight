@@ -1,15 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://cyxfoiophvq65"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_6dd20"]
-[ext_resource type="Texture2D" uid="uid://6j5uca21140o" path="res://assets/background_1.png" id="1_dah7k"]
-
-[sub_resource type="SystemFont" id="SystemFont_0a2cp"]
-
-[sub_resource type="SystemFont" id="SystemFont_acmuo"]
+[ext_resource type="Theme" uid="uid://blkn6lkjoukpa" path="res://assets/UI.tres" id="1_akp8w"]
+[ext_resource type="Texture2D" uid="uid://ccnxu8rieq1m2" path="res://assets/background.png" id="2_4jln4"]
+[ext_resource type="FontFile" uid="uid://cgbjoa3axtvlx" path="res://assets/Jersey15-Regular.ttf" id="3_3jl8b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_48ga0"]
-font = SubResource("SystemFont_acmuo")
-font_size = 70
+font = ExtResource("3_3jl8b")
+font_size = 100
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -18,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_akp8w")
 script = ExtResource("1_6dd20")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -25,10 +24,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 200.0
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 5.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_dah7k")
+texture = ExtResource("2_4jln4")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -48,13 +50,10 @@ alignment = 1
 
 [node name="Start" type="Button" parent="MarginContainer/Main/Buttons"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_0a2cp")
-theme_override_font_sizes/font_size = 50
 text = "Iniciar"
 
 [node name="Exit" type="Button" parent="MarginContainer/Main/Buttons"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
 text = "Salir"
 
 [node name="Title" type="VBoxContainer" parent="MarginContainer"]

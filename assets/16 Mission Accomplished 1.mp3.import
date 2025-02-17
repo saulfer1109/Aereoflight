@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3nius5a3p7de"
+path="res://.godot/imported/16 Mission Accomplished 1.mp3-5419606e94d7dfba4a6c030ffc5fb1fb.mp3str"
+
+[deps]
+
+source_file="res://assets/16 Mission Accomplished 1.mp3"
+dest_files=["res://.godot/imported/16 Mission Accomplished 1.mp3-5419606e94d7dfba4a6c030ffc5fb1fb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
